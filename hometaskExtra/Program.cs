@@ -195,11 +195,22 @@ void checkPlentyFromArray(int [] userArray, int plentySum)
             tempLenght = plenty.Length;
             printArray(plenty);
             Console.WriteLine();
+            for (int i = 0; i < tempLenght; i++)
+            {
+                if  (plenty[i] == plentySum)
+                {
+                    Console.Write("В множистве ");
+                    printArray(plenty);
+                    Console.WriteLine($" существует подмножество {plenty[i]} с суммой всех элементов равной {plentySum}");
+                    Console.WriteLine();
+                }
+            }
         }
+
 }
 
 int [] userArray = new int [8] {-1, 0, -8, -5, -7, -5, -3, -15};
 printArray(userArray);
-checkPlentyFromArray(userArray, -10);
+checkPlentyFromArray(userArray, -8);
 
 
